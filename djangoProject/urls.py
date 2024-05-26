@@ -16,7 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from .views import users, get_or_update_or_delete_user
+from .betterViews import UserListCreateAPIView,UserRetrieveUpdateDestroyAPIView
+from .customViews import UserListCreateAPIView
 
 urlpatterns = [
+    #path('users/', users),
+    #path('users/<id>', get_or_update_or_delete_user),
+    #path('users/',UserListCreateAPIView.as_view()),
+    #path('users/<id>', UserRetrieveUpdateDestroyAPIView.as_view()),
+    path('users/', UserListCreateAPIView.as_view()),
     path('admin/', admin.site.urls),
 ]
